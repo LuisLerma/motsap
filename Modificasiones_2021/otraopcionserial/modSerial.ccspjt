@@ -1,0 +1,19 @@
+[PROJECT]
+Target=modSerial.hex
+Processor_Text=PIC16F628A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=modSerial.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[modSerial.c]
+Type=4
+[mru-list]
+1=modSerial.c
+[Opened Files]
+1=modSerial.c
+2=
+[Units]
+Count=1
+1=modSerial (main)

@@ -1,0 +1,63 @@
+
+ROM used:   750/2048 (37%)
+            750/2048 (37%) including unused fragments
+
+            0.4 Average locations per line
+            1.6 Average locations per statement
+
+RAM used:   62/224 (28%) at main() level
+            80/224 (36%) worst case
+
+Stack used: 4 worst case (2 in main + 2 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  302   164  35  blue.c
+  518     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
+  429   179  38  Lib_rc522.h
+  423   125  27  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+   32     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
+----- -----
+ 1732   468 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   3    1             @delay_ms1
+0     77  10    5   840  7.7  MFRC522_Rd
+0     77  10    5   808  6.2  MFRC522_Wr
+ Inline         4   127  3.3  MFRC522_Clear_Bit
+ Inline         4   120  2.8  MFRC522_Set_Bit
+ Inline         0   197  1.8  MFRC522_Reset
+ Inline         1    72  2.0  MFRC522_AntennaOn
+ Inline         0    25  1.2  MFRC522_AntennaOff
+0    101  13    0   298  1.9  MFRC522_Init
+0    160  21    1   569  5.1  timer_1
+0     21   3    3             @DIV88
+ Inline         6             @PRINTF_D_9600_50_49
+0     85  11    1   371  4.7  PanicRoom
+0     23   3    0   113  2.5  serial_isr
+0    126  17    1   719  4.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               12
+    Statements              468
+    Comments                311
+    Volume (V)              6728
+    Difficulty (D)          44.1
+    Effort to implement (E) 296912
+    Time to implement (T)   4 hours, 35 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   14
+    Maintainability (MI)    128
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0003A    55  0  
+0003B-007FF   691  1298  
+
+
+

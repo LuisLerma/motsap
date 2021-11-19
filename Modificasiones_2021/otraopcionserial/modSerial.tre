@@ -1,0 +1,7 @@
+ÀÄmodSerial
+   ÃÄMAIN  0/59  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@delay_ms1  0/21  Ram=1
+   ³  ÀÄ@delay_ms1  0/21  Ram=1
+   ÀÄserial_isr  0/88  Ram=2
+      ÀÄtiempoala  (Inline)  Ram=5

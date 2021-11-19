@@ -1,0 +1,94 @@
+ÀÄv5
+   ÃÄMAIN  0/140  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄMFRC522_Init  0/74  Ram=0
+   ³  ³  ÃÄMFRC522_Reset  (Inline)  Ram=0
+   ³  ³  ³  ÀÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÃÄMFRC522_AntennaOff  (Inline)  Ram=0
+   ³  ³  ³  ÀÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³  ³  ³     ÃÄMFRC522_Rd  0/77  Ram=5
+   ³  ³  ³     ÀÄMFRC522_Wr  0/77  Ram=5
+   ³  ³  ÀÄMFRC522_AntennaOn  (Inline)  Ram=1
+   ³  ³     ÃÄMFRC522_Rd  0/77  Ram=5
+   ³  ³     ÀÄMFRC522_Set_Bit  0/15  Ram=4
+   ³  ³        ÃÄMFRC522_Rd  0/77  Ram=5
+   ³  ³        ÀÄMFRC522_Wr  0/77  Ram=5
+   ³  ÃÄ@delay_ms1  0/21  Ram=1
+   ³  ÃÄ@delay_ms1  0/21  Ram=1
+   ³  ÀÄdeteccion  0/425  Ram=1
+   ³     ÃÄMFRC522_isCard  (Inline)  Ram=3
+   ³     ³  ÀÄMFRC522_Request  (Inline)  Ram=7
+   ³     ³     ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³     ÀÄMFRC522_ToCard  0/218  Ram=17
+   ³     ³        ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³     ³        ³  ÀÄ*
+   ³     ³        ÃÄMFRC522_Set_Bit  0/15  Ram=4
+   ³     ³        ³  ÀÄ*
+   ³     ³        ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Set_Bit  0/15  Ram=4
+   ³     ³        ³  ÀÄ*
+   ³     ³        ÃÄMFRC522_Rd  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³     ³        ³  ÀÄ*
+   ³     ³        ÃÄMFRC522_Rd  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Rd  0/77  Ram=5
+   ³     ³        ÃÄMFRC522_Rd  0/77  Ram=5
+   ³     ³        ÀÄMFRC522_Rd  0/77  Ram=5
+   ³     ÃÄMFRC522_ReadCardSerial  (Inline)  Ram=5
+   ³     ³  ÀÄMFRC522_AntiColl  (Inline)  Ram=8
+   ³     ³     ÃÄMFRC522_Wr  0/77  Ram=5
+   ³     ³     ÃÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³     ³     ³  ÀÄ*
+   ³     ³     ÀÄMFRC522_ToCard  0/218  Ram=17
+   ³     ³        ÀÄ*
+   ³     ÃÄget_UID  (Inline)  Ram=5
+   ³     ÃÄstart  0/18  Ram=1
+   ³     ³  ÀÄ@delay_ms1  0/21  Ram=1
+   ³     ÀÄMFRC522_Halt  (Inline)  Ram=5
+   ³        ÃÄMFRC522_CRC  (Inline)  Ram=9
+   ³        ³  ÃÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³        ³  ³  ÀÄ*
+   ³        ³  ÃÄMFRC522_Set_Bit  0/15  Ram=4
+   ³        ³  ³  ÀÄ*
+   ³        ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³        ³  ÃÄMFRC522_Wr  0/77  Ram=5
+   ³        ³  ÃÄMFRC522_Rd  0/77  Ram=5
+   ³        ³  ÃÄMFRC522_Rd  0/77  Ram=5
+   ³        ³  ÀÄMFRC522_Rd  0/77  Ram=5
+   ³        ÃÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³        ³  ÀÄ*
+   ³        ÃÄMFRC522_ToCard  0/218  Ram=17
+   ³        ³  ÀÄ*
+   ³        ÀÄMFRC522_Clear_Bit  0/16  Ram=4
+   ³           ÀÄ*
+   ÃÄtimer_1  0/73  Ram=1
+   ³  ÀÄ@PRINTF_D_9600_50_49  0/103  Ram=6
+   ³     ÃÄ@DIV88  0/23  Ram=3
+   ³     ÀÄ@DIV88  0/23  Ram=3
+   ÃÄPanicRoom  0/85  Ram=1
+   ÀÄserial_isr  0/412  Ram=0
+      ÃÄPassChange  (Inline)  Ram=5
+      ÃÄPassVerify  (Inline)  Ram=5
+      ³  ÃÄstart  0/18  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PRINTF_D_9600_50_49  0/103  Ram=6
+      ³     ÀÄ*
+      ÃÄbackdoor  (Inline)  Ram=5
+      ÃÄtiempoala  0/101  Ram=1
+      ³  ÃÄ@MUL88  0/39  Ram=2
+      ³  ÃÄ@MUL88  0/39  Ram=2
+      ³  ÀÄ@PRINTF_D_9600_50_49  0/103  Ram=6
+      ³     ÀÄ*
+      ÃÄtiempoala  0/101  Ram=1
+      ³  ÀÄ*
+      ÀÄstart  0/18  Ram=1
+         ÀÄ*

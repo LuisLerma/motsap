@@ -1,0 +1,210 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029-02C llavero1
+02D-030 UID
+031     i
+032     TagType
+033.0   C_uid
+033.1   onehit
+034-035 tiempo_alarma
+036     cont
+037     segundos
+038     c1
+039     c2
+03A     c3
+03B     A
+03C     b
+03D     c
+03E     d
+03F     e
+040     f
+041     g
+042     h
+043-04C clave
+04D-056 edu
+057     control
+058     num_faults
+059     SecurityLVL
+05A-05B get_UID.data
+05A     MFRC522_Halt.unLen
+05A-05B MFRC522_isCard.TagType
+05A     MFRC522_AntennaOn.stt
+05A-05B MFRC522_ReadCardSerial.str
+05A     MAIN.@SCRATCH1
+05B-05E MFRC522_Halt.buff
+05C     MFRC522_ReadCardSerial._status
+05C     MFRC522_Request.reqMode
+05C-05D get_UID.UID
+05C     MFRC522_isCard.@SCRATCH1
+05D-05E MFRC522_AntiColl.serNum
+05D-05E MFRC522_Request.TagType
+05D     MFRC522_ReadCardSerial.@SCRATCH1
+05E     get_UID.i
+05E     MFRC522_ReadCardSerial.@SCRATCH2
+05F-060 MFRC522_CRC.dataIn
+05F     MFRC522_AntiColl._status
+05F     MFRC522_Request._status
+05F     get_UID.@SCRATCH1
+060     MFRC522_Request.backBits
+060     MFRC522_AntiColl.i
+061     MFRC522_CRC.length
+061     MFRC522_AntiColl.serNumCheck
+061     MFRC522_Request.@SCRATCH1
+062     MFRC522_AntiColl.unLen
+062-063 MFRC522_CRC.dataOut
+062     MFRC522_Request.@SCRATCH2
+063     MFRC522_ToCard.command
+063     MFRC522_AntiColl.@SCRATCH1
+064     MFRC522_CRC.i
+064-065 MFRC522_ToCard.sendData
+064     MFRC522_AntiColl.@SCRATCH2
+065     MFRC522_CRC.n
+066     MFRC522_ToCard.sendLen
+066     MFRC522_CRC.@SCRATCH1
+067-068 MFRC522_ToCard.backData
+067     MFRC522_CRC.@SCRATCH2
+069-06A MFRC522_ToCard.backLen
+06B     MFRC522_ToCard._status
+06C     MFRC522_ToCard.irqEn
+06D     MFRC522_ToCard.waitIRq
+06E     MFRC522_ToCard.lastBits
+06F     MFRC522_ToCard.n
+070     MFRC522_ToCard.i
+071     MFRC522_Clear_Bit.addr
+071     MFRC522_Set_Bit.addr
+071     MFRC522_ToCard.@SCRATCH1
+072     MFRC522_Set_Bit.mask
+072     MFRC522_Clear_Bit.mask
+072     MFRC522_ToCard.@SCRATCH2
+073     MFRC522_Clear_Bit.tmp
+073     MFRC522_Set_Bit.tmp
+073     MFRC522_ToCard.@SCRATCH3
+074     MFRC522_Rd.address
+074     MFRC522_Clear_Bit.@SCRATCH1
+074     MFRC522_Set_Bit.@SCRATCH1
+075     MFRC522_Wr.address
+075     MFRC522_Rd.i
+076     MFRC522_Wr.value
+076     MFRC522_Rd.ucAddr
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     MFRC522_Rd.ucResult
+07B     MFRC522_Wr.i
+07C     MFRC522_Wr.ucAddr
+07C     MFRC522_Rd.@SCRATCH1
+07D     MFRC522_Wr.@SCRATCH1
+07E     PanicRoom.@SCRATCH1
+09B-09C @READ_PROGRAM_MEMORY8.P1
+0A0-0A1 @PRINTF_LU_9600_50_49.P1
+0A0     tiempoala.@SCRATCH1
+0A0     backdoor.@SCRATCH1
+0A0     start.@SCRATCH1
+0A0     PassChange.@SCRATCH1
+0A0     PassVerify.@SCRATCH1
+0A1     @MUL88.P1
+0A1     @delay_ms1.P2
+0A1     tiempoala.@SCRATCH2
+0A1     backdoor.@SCRATCH2
+0A1     PassChange.@SCRATCH2
+0A1     PassVerify.@SCRATCH2
+0A2     @MUL88.P1
+0A2     tiempoala.@SCRATCH3
+0A2     @PRINTF_LU_9600_50_49.@SCRATCH1
+0A2     backdoor.@SCRATCH3
+0A2     PassChange.@SCRATCH3
+0A2     PassVerify.@SCRATCH3
+0A3     tiempoala.@SCRATCH4
+0A3     @PRINTF_LU_9600_50_49.@SCRATCH2
+0A3     backdoor.@SCRATCH4
+0A3     PassChange.@SCRATCH4
+0A3     PassVerify.@SCRATCH4
+0A4     tiempoala.@SCRATCH5
+0A4     @PRINTF_LU_9600_50_49.@SCRATCH3
+0A4     backdoor.@SCRATCH5
+0A4     PassChange.@SCRATCH5
+0A4     PassVerify.@SCRATCH5
+0A5     @PRINTF_LU_9600_50_49.@SCRATCH4
+0A6     @PRINTF_LU_9600_50_49.@SCRATCH5
+0A7     @PRINTF_LU_9600_50_49.@SCRATCH6
+0A8     @PRINTF_LU_9600_50_49.@SCRATCH7
+
+ROM Allocation:
+00003B  @delay_ms1
+000050  PanicRoom
+0000D8  timer_1
+0000F7  start
+000109  @MUL88
+000130  serial_isr
+00013A  PassChange
+0001CE  PassVerify
+00028E  backdoor
+000318  tiempoala
+000385  @PRINTF_LU_9600_50_49
+0003E7  MFRC522_Wr
+000438  MFRC522_Rd
+000485  MFRC522_Clear_Bit
+000495  MFRC522_Set_Bit
+0004A4  MFRC522_Init
+0004AB  MFRC522_Reset
+0004DE  MFRC522_AntennaOff
+0004E3  MFRC522_AntennaOn
+0004EE  MFRC522_ToCard
+0005C8  deteccion
+00060E  MFRC522_isCard
+000614  MFRC522_Request
+00064C  MFRC522_ReadCardSerial
+000650  MFRC522_AntiColl
+0006B5  get_UID
+000703  MFRC522_Halt
+00070E  MFRC522_CRC
+000784  MAIN
+000784  @cinit1
+00079D  @cinit2
+
+Project Directory:
+    C:\Users\0bytes\Desktop\0bytes\Prototipo2\Modificasiones_2021\Version1\
+
+Project Files:
+    bytes1.c                                                [15-ene.-21 22:32  CRC=3AA92346]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h [12-nov.-13 14:34  CRC=44569924]
+    Lib_rc522.h                                             [24-jul.-19 14:25  CRC=E4608B34]
+
+Source signature=47C0D2D2
+
+Units:
+    bytes1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F628A
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   bytes1.xsym
+    Errors:      bytes1.err
+    Ext Symbols: bytes1.esym
+    INHX8:       bytes1.hex
+    Symbols:     bytes1.sym
+    List:        bytes1.lst
+    Debug/COFF:  bytes1.cof
+    Project:     bytes1.ccspjt
+    Call Tree:   bytes1.tre
+    Statistics:  bytes1.STA

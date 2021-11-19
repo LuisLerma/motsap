@@ -1,0 +1,327 @@
+CCS PCM C Compiler, Version 5.015, 5967               13-may.-21 20:37
+
+               Filename:   C:\Users\0bytes\Desktop\0bytes\Prototipo2\Modificasiones_2021\otraopcionserial\modSerial.lst
+
+               ROM used:   217 words (11%)
+                           Largest free fragment is 1831
+               RAM used:   25 (11%) at main() level
+                           31 (14%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   09E
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  MOVLW  8C
+001B:  MOVWF  04
+001C:  BTFSS  00.5
+001D:  GOTO   020
+001E:  BTFSC  0C.5
+001F:  GOTO   031
+0020:  MOVF   22,W
+0021:  MOVWF  04
+0022:  MOVF   23,W
+0023:  MOVWF  77
+0024:  MOVF   24,W
+0025:  MOVWF  78
+0026:  MOVF   25,W
+0027:  MOVWF  79
+0028:  MOVF   26,W
+0029:  MOVWF  7A
+002A:  MOVF   27,W
+002B:  MOVWF  0A
+002C:  SWAPF  21,W
+002D:  MOVWF  03
+002E:  SWAPF  7F,F
+002F:  SWAPF  7F,W
+0030:  RETFIE
+.................... //Prototipo bytes0//MOTSAP-BETA 
+.................... //Ingeniero Luis Eduardo Lerma J. 
+.................... //Agosto 2019 
+....................  
+.................... #include <16F628A.h> 
+.................... //////////// Standard Header file for the PIC16F628A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F628A 
+....................  
+.................... #list 
+....................  
+.................... #fuses XT, BROWNOUT, NOLVP, NOWDT, PUT, NOMCLR 
+.................... #use delay(internal = 4MHz) 
+*
+0089:  MOVLW  34
+008A:  MOVWF  04
+008B:  BCF    03.7
+008C:  MOVF   00,W
+008D:  BTFSC  03.2
+008E:  GOTO   09D
+008F:  MOVLW  01
+0090:  MOVWF  78
+0091:  CLRF   77
+0092:  DECFSZ 77,F
+0093:  GOTO   092
+0094:  DECFSZ 78,F
+0095:  GOTO   091
+0096:  MOVLW  4A
+0097:  MOVWF  77
+0098:  DECFSZ 77,F
+0099:  GOTO   098
+009A:  GOTO   09B
+009B:  DECFSZ 00,F
+009C:  GOTO   08F
+009D:  RETURN
+.................... #use rs232(baud = 9600, parity = N, XMIT = PIN_B2, RCV = PIN_B1, bits = 8) 
+.................... fast_io(A); 
+....................  
+.................... //Variables - Sistema de seguridad 
+.................... char clave[5]; 
+.................... char edu[5]; 
+.................... char control; 
+....................  
+....................  
+....................  
+.................... /*TENER EN CUENTA 
+....................  
+.................... BLUETOOTH   RB3 
+.................... ALARMA      RA1 
+.................... START       RA7 
+.................... ON/OFF      RA0 
+....................  
+.................... */ 
+....................  
+.................... void tiempoala() 
+.................... { 
+....................    gets(clave); 
+*
+0039:  MOVLW  28
+003A:  MOVWF  04
+003B:  BCF    03.7
+003C:  DECF   04,F
+003D:  INCF   04,F
+003E:  BTFSS  0C.5
+003F:  GOTO   03E
+0040:  MOVF   1A,W
+0041:  MOVWF  00
+0042:  MOVLW  0D
+0043:  SUBWF  00,W
+0044:  BTFSS  03.2
+0045:  GOTO   03D
+0046:  CLRF   00
+....................    strcpy(edu, clave); 
+0047:  CLRF   38
+0048:  MOVLW  28
+0049:  MOVWF  37
+004A:  CLRF   36
+004B:  MOVLW  2D
+004C:  MOVWF  35
+004D:  MOVF   37,W
+004E:  MOVWF  04
+004F:  BCF    03.7
+0050:  BTFSC  38.0
+0051:  BSF    03.7
+0052:  MOVF   00,W
+0053:  MOVWF  39
+0054:  MOVF   35,W
+0055:  MOVWF  04
+0056:  BCF    03.7
+0057:  BTFSC  36.0
+0058:  BSF    03.7
+0059:  MOVF   39,W
+005A:  MOVWF  00
+005B:  MOVF   00,F
+005C:  BTFSC  03.2
+005D:  GOTO   061
+005E:  INCF   35,F
+005F:  INCF   37,F
+0060:  GOTO   04D
+....................     
+....................    if(edu[0] == 't' ){ 
+0061:  MOVF   2D,W
+0062:  SUBLW  74
+0063:  BTFSS  03.2
+0064:  GOTO   06D
+....................       output_high(PIN_A1); 
+0065:  BSF    03.5
+0066:  BCF    05.1
+0067:  BCF    03.5
+0068:  BSF    05.1
+....................       output_low(PIN_A7); 
+0069:  BSF    03.5
+006A:  BCF    05.7
+006B:  BCF    03.5
+006C:  BCF    05.7
+....................    } 
+....................       if(edu[0] == 'q' ){ 
+006D:  MOVF   2D,W
+006E:  SUBLW  71
+006F:  BTFSS  03.2
+0070:  GOTO   079
+....................       output_low(PIN_A1); 
+0071:  BSF    03.5
+0072:  BCF    05.1
+0073:  BCF    03.5
+0074:  BCF    05.1
+....................       output_high(PIN_A7); 
+0075:  BSF    03.5
+0076:  BCF    05.7
+0077:  BCF    03.5
+0078:  BSF    05.7
+....................    } 
+....................     
+.................... } 
+....................  
+....................  
+....................  
+.................... #INT_RDA // Interrupcion por serial. para recibir datos del movil 
+.................... void serial_isr() 
+.................... {   
+....................       control = getc(); 
+*
+0031:  BTFSS  0C.5
+0032:  GOTO   031
+0033:  MOVF   1A,W
+0034:  MOVWF  32
+....................       if (control == 'r'){tiempoala();} 
+0035:  MOVF   32,W
+0036:  SUBLW  72
+0037:  BTFSS  03.2
+0038:  GOTO   079
+....................       printf("%s", edu); 
+*
+0079:  MOVLW  2D
+007A:  MOVWF  04
+007B:  BCF    03.7
+007C:  MOVLW  00
+007D:  IORWF  00,W
+007E:  BTFSC  03.2
+007F:  GOTO   086
+0080:  MOVF   00,W
+0081:  BTFSS  0C.4
+0082:  GOTO   081
+0083:  MOVWF  19
+0084:  INCF   04,F
+0085:  GOTO   07C
+....................     
+0086:  BCF    0C.5
+0087:  BCF    0A.3
+0088:  GOTO   020
+.................... } 
+....................  
+....................  
+.................... void main() 
+*
+009E:  MOVF   03,W
+009F:  ANDLW  1F
+00A0:  MOVWF  03
+00A1:  BSF    03.5
+00A2:  BSF    0E.3
+00A3:  MOVLW  19
+00A4:  MOVWF  19
+00A5:  MOVLW  A6
+00A6:  MOVWF  18
+00A7:  MOVLW  90
+00A8:  BCF    03.5
+00A9:  MOVWF  18
+00AA:  MOVLW  07
+00AB:  MOVWF  1F
+00AC:  BCF    03.7
+.................... { 
+....................  
+....................    set_timer1(3036); 
+00AD:  CLRF   0E
+00AE:  MOVLW  0B
+00AF:  MOVWF  0F
+00B0:  MOVLW  DC
+00B1:  MOVWF  0E
+....................    setup_timer_1(T1_INTERNAL | T1_DIV_BY_8); 
+00B2:  MOVLW  B5
+00B3:  MOVWF  10
+....................    ENABLE_INTERRUPTS(GLOBAL);  // Se habilitan las interrupciones globales 
+00B4:  MOVLW  C0
+00B5:  IORWF  0B,F
+....................    ENABLE_INTERRUPTS(INT_RDA); // Se habilitan la interrupcion por evento serial. 
+00B6:  BSF    03.5
+00B7:  BSF    0C.5
+....................  
+....................    set_tris_A(0x00); //Puerto D como salidas digitales. 
+00B8:  MOVLW  00
+00B9:  MOVWF  05
+....................  
+....................    output_low(PIN_A0); 
+00BA:  BCF    05.0
+00BB:  BCF    03.5
+00BC:  BCF    05.0
+....................    output_low(PIN_A1); 
+00BD:  BSF    03.5
+00BE:  BCF    05.1
+00BF:  BCF    03.5
+00C0:  BCF    05.1
+....................    output_high(PIN_B3); 
+00C1:  BSF    03.5
+00C2:  BCF    06.3
+00C3:  BCF    03.5
+00C4:  BSF    06.3
+....................    output_low(PIN_A7); 
+00C5:  BSF    03.5
+00C6:  BCF    05.7
+00C7:  BCF    03.5
+00C8:  BCF    05.7
+....................    delay_ms(300); 
+00C9:  MOVLW  02
+00CA:  MOVWF  33
+00CB:  MOVLW  96
+00CC:  MOVWF  34
+00CD:  CALL   089
+00CE:  DECFSZ 33,F
+00CF:  GOTO   0CB
+....................  
+....................    delay_ms(300); 
+00D0:  MOVLW  02
+00D1:  MOVWF  33
+00D2:  MOVLW  96
+00D3:  MOVWF  34
+00D4:  CALL   089
+00D5:  DECFSZ 33,F
+00D6:  GOTO   0D2
+....................    while (true) 
+....................    { 
+00D7:  GOTO   0D7
+....................     
+....................    } 
+.................... } 
+00D8:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F50   NOWDT PUT INTRC_IO NOMCLR BROWNOUT NOLVP NOCPD NOPROTECT

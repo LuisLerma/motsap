@@ -1,0 +1,70 @@
+
+ROM used:   1632/2048 (80%)
+            1632/2048 (80%) including unused fragments
+
+            1.4 Average locations per line
+            5.4 Average locations per statement
+
+RAM used:   68/224 (30%) at main() level
+            106/224 (47%) worst case
+
+Stack used: 7 worst case (4 in main + 3 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  216   125  41  0crystal_start.c
+  518     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
+  429   179  59  Lib_rc522.h
+----- -----
+ 1163   304 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1    1             @delay_ms1
+0     81   5    5   840  7.7  MFRC522_Rd
+0     81   5    5   808  6.2  MFRC522_Wr
+0     18   1    4   127  3.3  MFRC522_Clear_Bit
+0     17   1    4   120  2.8  MFRC522_Set_Bit
+ Inline         0   197  1.8  MFRC522_Reset
+ Inline         1    72  2.0  MFRC522_AntennaOn
+ Inline         0    25  1.2  MFRC522_AntennaOff
+0     86   5    0   298  1.9  MFRC522_Init
+0    228  14   17  2288 15.8  MFRC522_ToCard
+ Inline         7   319  6.0  MFRC522_Request
+ Inline         9   568  8.2  MFRC522_CRC
+ Inline         5   302  3.3  MFRC522_Halt
+ Inline         8   581  8.2  MFRC522_AntiColl
+ Inline         3    89  3.6  MFRC522_isCard
+ Inline         5   149  4.7  MFRC522_ReadCardSerial
+0     34   2    5   244  6.7  get_UID
+0     52   3    1   165  2.2  PanicRoom
+0     31   2    0   174  3.1  timer_1
+0     18   1    1    48  1.1  start
+ Inline         5   262  2.8  PassChange
+ Inline         5   843  4.8  PassVerify
+0    346  21    2   136  2.8  serial_isr
+0    438  27    0   797  4.8  deteccion
+0    122   7    1   609  4.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               24
+    Statements              304
+    Comments                149
+    Volume (V)              17157
+    Difficulty (D)          110.9
+    Effort to implement (E) 1902070
+    Time to implement (T)   29 hours, 21 minutes
+    Est Delivered Bugs (B)  5
+    Cyclomatic Complexity   39
+    Maintainability (MI)    62
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0003A    55  0  
+0003B-007FF  1573  416  
+
+
+

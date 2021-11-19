@@ -1,0 +1,11 @@
+>>> Warning 202 "comcad.c" Line 12(9,10): Variable never used:   b
+>>> Warning 202 "comcad.c" Line 12(12,13): Variable never used:   c
+>>> Warning 202 "comcad.c" Line 13(6,7): Variable never used:   e
+>>> Warning 202 "comcad.c" Line 13(9,10): Variable never used:   f
+>>> Warning 202 "comcad.c" Line 13(12,13): Variable never used:   g
+>>> Warning 202 "comcad.c" Line 13(15,16): Variable never used:   h
+>>> Warning 202 "comcad.c" Line 17(6,16): Variable never used:   num_faults
+>>> Warning 202 "comcad.c" Line 18(6,17): Variable never used:   SecurityLVL
+      Memory usage:   ROM=14%      RAM=20% - 23%
+      0 Errors,  8 Warnings.
+Build Successful.

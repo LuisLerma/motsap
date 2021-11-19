@@ -1,0 +1,75 @@
+
+ROM used:   1925/2048 (94%)
+            1925/2048 (94%) including unused fragments
+
+            1.6 Average locations per line
+            5.8 Average locations per statement
+
+RAM used:   56/224 (25%) at main() level
+            105/224 (47%) worst case
+
+Stack used: 7 worst case (4 in main + 3 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  278   154  46  v3.c
+  518     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
+  429   179  54  Lib_rc522.h
+----- -----
+ 1225   333 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1    1             @delay_ms1
+0     77   4    5   840  7.7  MFRC522_Rd
+0     77   4    5   808  6.2  MFRC522_Wr
+0     16   1    4   127  3.3  MFRC522_Clear_Bit
+0     15   1    4   120  2.8  MFRC522_Set_Bit
+ Inline         0   197  1.8  MFRC522_Reset
+ Inline         1    72  2.0  MFRC522_AntennaOn
+ Inline         0    25  1.2  MFRC522_AntennaOff
+0     74   4    0   298  1.9  MFRC522_Init
+0    218  11   17  2288 15.8  MFRC522_ToCard
+ Inline         7   319  6.0  MFRC522_Request
+ Inline         9   568  8.2  MFRC522_CRC
+ Inline         5   302  3.3  MFRC522_Halt
+ Inline         8   581  8.2  MFRC522_AntiColl
+ Inline         3    89  3.6  MFRC522_isCard
+ Inline         5   149  4.7  MFRC522_ReadCardSerial
+ Inline         5   244  6.7  get_UID
+0     86   4    1   384  4.7  PanicRoom
+0     31   2    0   174  3.1  timer_1
+ Inline         5   317  4.2  tiempoala
+0     39   2    2             @MUL88
+ Inline         5   539  6.2  backdoor
+0     18   1    1    48  1.1  start
+ Inline         5   258  4.4  PassChange
+ Inline         5   917  7.2  PassVerify
+0     23   1    3             @DIV88
+ Inline         6             @PRINTF_D_9600_50_49
+0    617  32    0   378  4.1  serial_isr
+0    444  23    0   720  4.3  deteccion
+0    110   6    1   609  4.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               26
+    Statements              333
+    Comments                152
+    Volume (V)              19750
+    Difficulty (D)          128.0
+    Effort to implement (E) 2527485
+    Time to implement (T)   39 hours, 0 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   46
+    Maintainability (MI)    66
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0003A    55  0  
+0003B-007FF  1866  123  
+
+
+

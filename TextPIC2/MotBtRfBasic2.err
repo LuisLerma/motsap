@@ -1,0 +1,4 @@
+>>> Warning 216 "MotBtRfBasic2.c" Line 196(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+      Memory usage:   ROM=78%      RAM=30% - 47%
+      0 Errors,  1 Warnings.
+Build Successful.

@@ -1,0 +1,184 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029-02C Tarjeta1
+02D-030 Tarjeta2
+031-034 llavero1
+035-038 UID
+039     i
+03A     TagType
+03B.0   C_uid
+03B.1   onehit
+03C-03D tiempo_alarma
+03E     cont
+03F     segundos
+040     A
+041     b
+042     c
+043     d
+044     e
+045     f
+046     g
+047     h
+048-051 clave
+052-05B edu
+05C     control
+05D     SecurityLVL
+05E-05F MFRC522_isCard.TagType
+05E-05F get_UID.data
+05E     MFRC522_AntennaOn.stt
+05E     MFRC522_Halt.unLen
+05E-05F MFRC522_ReadCardSerial.str
+05E     MAIN.@SCRATCH1
+05F-062 MFRC522_Halt.buff
+060-061 get_UID.UID
+060     MFRC522_Request.reqMode
+060     MFRC522_ReadCardSerial._status
+060     MFRC522_isCard.@SCRATCH1
+061-062 MFRC522_Request.TagType
+061-062 MFRC522_AntiColl.serNum
+061     MFRC522_ReadCardSerial.@SCRATCH1
+062     get_UID.i
+062     MFRC522_ReadCardSerial.@SCRATCH2
+063     MFRC522_AntiColl._status
+063     MFRC522_Request._status
+063-064 MFRC522_CRC.dataIn
+063     get_UID.@SCRATCH1
+064     MFRC522_Request.backBits
+064     MFRC522_AntiColl.i
+065     MFRC522_AntiColl.serNumCheck
+065     MFRC522_CRC.length
+065     MFRC522_Request.@SCRATCH1
+066     MFRC522_AntiColl.unLen
+066-067 MFRC522_CRC.dataOut
+066     MFRC522_Request.@SCRATCH2
+067     MFRC522_ToCard.command
+067     MFRC522_AntiColl.@SCRATCH1
+068     MFRC522_CRC.i
+068-069 MFRC522_ToCard.sendData
+068     MFRC522_AntiColl.@SCRATCH2
+069     MFRC522_CRC.n
+06A     MFRC522_ToCard.sendLen
+06A     MFRC522_CRC.@SCRATCH1
+06B-06C MFRC522_ToCard.backData
+06B     MFRC522_CRC.@SCRATCH2
+06D-06E MFRC522_ToCard.backLen
+06F     MFRC522_ToCard._status
+070     MFRC522_ToCard.irqEn
+071     MFRC522_ToCard.waitIRq
+072     MFRC522_ToCard.lastBits
+073     MFRC522_ToCard.n
+074     MFRC522_ToCard.i
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     MFRC522_Set_Bit.addr
+07B     MFRC522_Clear_Bit.addr
+07B     MFRC522_ToCard.@SCRATCH1
+07C     MFRC522_Set_Bit.mask
+07C     MFRC522_Clear_Bit.mask
+07C     MFRC522_ToCard.@SCRATCH2
+07D     MFRC522_Clear_Bit.tmp
+07D     MFRC522_Set_Bit.tmp
+07D     MFRC522_ToCard.@SCRATCH3
+07E     MFRC522_Rd.address
+07E     MFRC522_Clear_Bit.@SCRATCH1
+07E     MFRC522_Set_Bit.@SCRATCH1
+09B-09C @READ_PROGRAM_MEMORY8.P1
+0A0     MFRC522_Wr.address
+0A0     MFRC522_Rd.i
+0A1     MFRC522_Wr.value
+0A1     MFRC522_Rd.ucAddr
+0A2     MFRC522_Rd.ucResult
+0A2     MFRC522_Wr.i
+0A3     MFRC522_Wr.ucAddr
+0A3     MFRC522_Rd.@SCRATCH1
+0A4     MFRC522_Wr.@SCRATCH1
+0A5     PanicRoom.@SCRATCH1
+0A5     PassChange.@SCRATCH1
+0A5     PassVerify.@SCRATCH1
+0A5     serial_isr.@SCRATCH1
+0A6     @delay_ms1.P1
+0A6     PassChange.@SCRATCH2
+0A6     PassVerify.@SCRATCH2
+0A6     serial_isr.@SCRATCH2
+0A7     PassChange.@SCRATCH3
+0A7     PassVerify.@SCRATCH3
+0A8     PassChange.@SCRATCH4
+0A8     PassVerify.@SCRATCH4
+0A9     PassChange.@SCRATCH5
+0A9     PassVerify.@SCRATCH5
+
+ROM Allocation:
+00003B  @delay_ms1
+000050  PanicRoom
+000084  timer_1
+0000A3  serial_isr
+0000AB  PassChange
+00013B  PassVerify
+0001FC  MFRC522_Wr
+00024D  MFRC522_Rd
+00029E  MFRC522_Clear_Bit
+0002B0  MFRC522_Set_Bit
+0002C1  MFRC522_Init
+0002C8  MFRC522_Reset
+000307  MFRC522_AntennaOff
+00030C  MFRC522_AntennaOn
+000317  MFRC522_ToCard
+0003FB  get_UID
+00041D  deteccion
+00045F  MFRC522_isCard
+000465  MFRC522_Request
+00049F  MFRC522_ReadCardSerial
+0004A3  MFRC522_AntiColl
+000545  MFRC522_Halt
+000550  MFRC522_CRC
+0005CC  @cinit1
+0005CC  MAIN
+0005E1  @cinit2
+
+Project Directory:
+    C:\Users\0bytes\Desktop\0bytes\Prototipo2\TextPIC2\
+
+Project Files:
+    MotBtRfBasic2.c                                         [21-dic.-20 20:02  CRC=CAAD1285]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h [12-nov.-13 14:34  CRC=44569924]
+    Lib_rc522.h                                             [24-jul.-19 14:25  CRC=E4608B34]
+
+Source signature=D7C4C211
+
+Units:
+    MotBtRfBasic2 (main)
+
+Compiler Settings:
+    Processor:      PIC16F628A
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   MotBtRfBasic2.xsym
+    Errors:      MotBtRfBasic2.err
+    Ext Symbols: MotBtRfBasic2.esym
+    INHX8:       MotBtRfBasic2.hex
+    Symbols:     MotBtRfBasic2.sym
+    List:        MotBtRfBasic2.lst
+    Debug/COFF:  MotBtRfBasic2.cof
+    Project:     MotBtRfBasic2.ccspjt
+    Call Tree:   MotBtRfBasic2.tre
+    Statistics:  MotBtRfBasic2.STA

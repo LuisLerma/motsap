@@ -1,0 +1,12 @@
+# Writing all output to: C:\Users\0bytes\Desktop\0bytes\Prototipo2\DesigPIC_0crystal\BtRf_Pot.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 50
+clean 2
+route 50 16
+clean 2
+filter 5
+recorner diagonal
+status_file
+

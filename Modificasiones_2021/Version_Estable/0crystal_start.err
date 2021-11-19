@@ -1,0 +1,5 @@
+>>> Warning 216 "0crystal_start.c" Line 214(1,2): Interrupts disabled during call to prevent re-entrancy:  (start)
+>>> Warning 216 "0crystal_start.c" Line 214(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+      Memory usage:   ROM=80%      RAM=30% - 47%
+      0 Errors,  2 Warnings.
+Build Successful.

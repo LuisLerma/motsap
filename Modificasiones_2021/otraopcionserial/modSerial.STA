@@ -1,0 +1,48 @@
+
+ROM used:   217/2048 (11%)
+            217/2048 (11%) including unused fragments
+
+            0.4 Average locations per line
+            7.8 Average locations per statement
+
+RAM used:   25/224 (11%) at main() level
+            31/224 (14%) worst case
+
+Stack used: 2 worst case (1 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   77    28 100  modSerial.c
+  518     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h
+----- -----
+  595    28 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21  10    1             @delay_ms1
+ Inline         5   212  3.2  tiempoala
+0     88  41    2    92  2.5  serial_isr
+0     59  27    1   258  2.3  MAIN
+ Inline         0   258  2.3  @cinit1
+
+Program metrics:
+    Functions               4
+    Statements              28
+    Comments                119
+    Volume (V)              1151
+    Difficulty (D)          10.6
+    Effort to implement (E) 12183
+    Time to implement (T)   11 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   3
+    Maintainability (MI)    151
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00030    45  0  
+00031-007FF   168  1831  
+
+
+

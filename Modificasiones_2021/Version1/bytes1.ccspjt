@@ -1,0 +1,19 @@
+[PROJECT]
+Target=bytes1.hex
+Processor_Text=PIC16F628A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=bytes1.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[bytes1.c]
+Type=4
+[mru-list]
+1=bytes1.c
+[Opened Files]
+1=bytes1.c
+2=
+[Units]
+Count=1
+1=bytes1 (main)

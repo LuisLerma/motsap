@@ -1,0 +1,91 @@
+//Prototipo bytes0//MOTSAP-BETA
+//Ingeniero Luis Eduardo Lerma J.
+//Agosto 2019
+
+#include <16F628A.h>
+#fuses XT, BROWNOUT, NOLVP, NOWDT, PUT, NOMCLR
+#use delay(internal = 4MHz)
+#use rs232(baud = 9600, parity = N, XMIT = PIN_B2, RCV = PIN_B1, bits = 8)
+fast_io(A);
+
+
+int1 C_uid = false, onehit = 0;
+
+//Chronos mitho dios del tiempo.
+int8 tiempo_alarma = 0, tiempo_panic = 0;
+int8 cont = 0, segundos = 0;
+int8 c1 = 0,  c2 = 0,  c3 = 0;
+int1 sound = 0;
+
+//Variables - Sistema de seguridad
+char clave[5];
+char edu[5];
+char control;
+
+
+/*TENER EN CUENTA
+
+BLUETOOTH   RB3
+ALARMA      RA1
+START       RA7
+ON/OFF      RA0
+
+*/
+
+void tiempoala()
+{
+   gets(clave);
+   strcpy(edu, clave);
+   onehit = 1;  
+
+   c3 = edu[0]-'0';
+   c2 = edu[1]-'0';
+   c1 = edu[2]-'0';
+
+   tiempo_alarma = c1 + (c2*10) + (c3*100);
+
+   if(control == 't' ){
+      WRITE_EEPROM(40, tiempo_alarma);
+      printf("t");
+   }
+
+   if(control == 'd' ){
+      tiempo_panic = tiempo_alarma;
+      WRITE_EEPROM(41, tiempo_panic);
+      printf("d");
+   }
+}
+
+
+
+#INT_RDA // Interrupcion por serial. para recibir datos del movil
+void serial_isr()
+{  
+      disable_interrupts(int_timer1);
+      control = getc();
+      if (control == 'h'){tiempoala();}
+   
+}
+
+
+void main()
+{
+
+   set_timer1(3036);
+   setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);
+   ENABLE_INTERRUPTS(GLOBAL);  // Se habilitan las interrupciones globales
+   ENABLE_INTERRUPTS(INT_RDA); // Se habilitan la interrupcion por evento serial.
+
+   set_tris_A(0x00); //Puerto D como salidas digitales.
+
+   output_low(PIN_A0);
+   output_low(PIN_A1);
+   output_high(PIN_B3);
+   output_low(PIN_A7);
+   delay_ms(300);
+
+   delay_ms(300);
+   while (true)
+   {
+   }
+}
